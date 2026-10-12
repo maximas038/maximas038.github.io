@@ -87,14 +87,14 @@ p{margin-top:0}
 .trust-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:23px 0}
 .trust-item{text-align:center;color:var(--muted);font-size:.83rem}
 .trust-item strong{display:block;color:var(--text);font-size:.98rem}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
 .service-card,.project-card,.about-card,.creator-card,.contact-card{min-width:0;border:1px solid var(--line);border-radius:21px;background:var(--panel);box-shadow:0 12px 42px rgba(0,0,0,.05)}
-.service-card{padding:24px;transition:transform .22s,border-color .22s}
+.service-card{padding:26px;transition:transform .22s,border-color .22s}
 .service-card:hover{transform:translateY(-4px);border-color:rgba(155,123,255,.55)}
 .service-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,rgba(155,123,255,.22),rgba(102,217,255,.13));border:1px solid var(--line);font-size:1.3rem;margin-bottom:18px;flex-shrink:0}
-.service-card h3{font-size:1.15rem}
-.service-card p,.project-card p{color:var(--muted);font-size:.9rem}
-.service-card ul{padding-left:18px;margin-bottom:0;color:var(--muted);font-size:.84rem}
+.service-card h3{font-size:1.2rem}
+.service-card p,.project-card p{color:var(--muted);font-size:.92rem}
+.service-card ul{padding-left:18px;margin-bottom:0;color:var(--muted);font-size:.86rem}
 .service-card li+li{margin-top:5px}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}
 .about-card{padding:30px}
@@ -155,16 +155,18 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
 .footer strong{color:var(--text)}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:translateY(0)}
-/* Persistent WhatsApp contact button */
+
+/* WhatsApp: keep the button and desktop label, remove only the glow */
 .whatsapp-float{position:fixed;right:20px;bottom:22px;z-index:150;display:flex;align-items:center;gap:10px}
-.whatsapp-float a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 17px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#20c96b;color:#062c17;box-shadow:0 10px 35px rgba(32,201,107,.34);font-weight:850;transition:transform .2s,box-shadow .2s}
-.whatsapp-float a:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(32,201,107,.45)}
+.whatsapp-float a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 17px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#20c96b;color:#062c17;font-weight:850;box-shadow:none;transition:transform .2s}
+.whatsapp-float a:hover{transform:translateY(-2px);box-shadow:none}
 .whatsapp-float svg{width:29px;height:29px;flex-shrink:0}
 .whatsapp-label{font-size:.88rem;white-space:nowrap}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 @media(max-width:900px){
  .nav-links{gap:13px}.hero{gap:25px;min-height:auto}.hero h1{font-size:clamp(2.8rem,7vw,4.4rem)}
- .cards{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-inner{grid-template-columns:repeat(2,1fr)}
+ .trust-inner{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:700px){
  .container{width:min(calc(100% - 30px),540px)}.section{padding:70px 0}
@@ -175,13 +177,13 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
  .hero-copy{font-size:1rem}.hero-visual{width:100%;padding:22px 4px 25px;margin-top:4px}
  .profile-card{width:min(100%,355px);min-height:360px;padding:23px}.monogram{margin-top:30px}
  .chip-top{top:0;right:0}.chip-bottom{bottom:0;left:0}.float-chip{max-width:68%;font-size:.71rem;padding:9px 10px}
- .hero-meta{gap:8px 12px}.cards{grid-template-columns:1fr}
+ .hero-meta{gap:8px 12px}
  .about-grid,.projects,.contact-grid{grid-template-columns:1fr}
  .creator-card{grid-template-columns:1fr;gap:20px}
  .creator-art{grid-row:1;width:76px;height:76px;border-radius:22px}.creator-art svg{width:35px;height:35px}
  .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.contact-card{padding:21px}
  .whatsapp-float{right:14px;bottom:15px}
- .whatsapp-float a{width:58px;height:58px;min-height:58px;padding:0;border-radius:50%}
+ .whatsapp-float a{width:58px;height:58px;min-height:58px;padding:0;border-radius:50%;justify-content:center}
  .whatsapp-label{display:none}
 }
 @media(max-width:380px){
@@ -238,15 +240,34 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
 </div></div>
 
 <section class="section container" id="services">
-  <div class="reveal"><p class="eyebrow">What I can help with</p><h2>Services built around<br><span class="gradient">your next idea.</span></h2><p class="section-intro">Choose a service for your website, brand or content. Share your goals and requirements so we can discuss a suitable approach for your project.</p></div>
+  <div class="reveal"><p class="eyebrow">What I can help with</p><h2>Services built around<br><span class="gradient">your next idea.</span></h2><p class="section-intro">Choose a category that matches your goal. Each category covers related services, and you can share the exact requirements in your enquiry.</p></div>
   <div class="cards">
-    <article class="service-card reveal"><div class="service-icon">⌘</div><h3>Website Development</h3><p>Modern, responsive websites designed to present your idea clearly across mobile, tablet and desktop.</p><ul><li>Portfolio and personal websites</li><li>Business and service websites</li><li>Landing pages and creator pages</li><li>Responsive layouts and styling</li></ul></article>
-    <article class="service-card reveal"><div class="service-icon">▤</div><h3>Course Websites</h3><p>Web experiences that help educators and creators present online learning content in an organised way.</p><ul><li>Course and lesson pages</li><li>Curriculum and course information</li><li>Learning resource pages</li><li>Student-friendly navigation</li></ul></article>
-    <article class="service-card reveal"><div class="service-icon">⌨</div><h3>Website Development Training</h3><p>Learn website creation through structured lessons and practical guidance based on your learning needs.</p><ul><li>Recorded video courses</li><li>Live teaching sessions</li><li>HTML, CSS and JavaScript fundamentals</li><li>Guided practice projects</li></ul></article>
-    <article class="service-card reveal"><div class="service-icon">▶</div><h3>Video Editing</h3><p>Video editing for creators, brands and social platforms, with pacing and presentation suited to the format.</p><ul><li>YouTube videos and Shorts</li><li>Instagram Reels</li><li>Gaming and anime edits</li><li>Promotional and business videos</li><li>Other social-media videos</li></ul></article>
-    <article class="service-card reveal"><div class="service-icon">✎</div><h3>Content Creation</h3><p>Plan and shape content from the first idea through to a polished piece ready for your chosen platform.</p><ul><li>Content ideas and planning</li><li>Video concepts and scripts</li><li>Content structure and creative direction</li><li>Content creation with editing</li></ul></article>
-    <article class="service-card reveal"><div class="service-icon">✧</div><h3>Logo Design</h3><p>Logo concepts for creators, channels, small businesses and personal brands, using AI-assisted or custom approaches.</p><ul><li>Creator and YouTube channel logos</li><li>Brand and business logo concepts</li><li>AI-assisted design options</li><li>Custom visual directions</li></ul></article>
+    <article class="service-card reveal">
+      <div class="service-icon">⌘</div>
+      <h3>1. Website Development</h3>
+      <p>Modern, responsive websites designed to present your idea clearly across mobile, tablet and desktop.</p>
+      <ul><li>Personal and portfolio websites</li><li>Professional and business websites</li><li>Landing pages and creator pages</li><li>Course websites and learning pages</li></ul>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon">▤</div>
+      <h3>2. Website Training</h3>
+      <p>Learn how to create websites through structured lessons and practical guidance.</p>
+      <ul><li>Recorded website development courses</li><li>Live teaching sessions</li><li>HTML, CSS and JavaScript fundamentals</li><li>Guided practice projects</li></ul>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon">▶</div>
+      <h3>3. Video Editing & Content Creation</h3>
+      <p>Video editing and content support for creators, brands and social platforms.</p>
+      <ul><li>YouTube videos and Shorts</li><li>Instagram Reels and other social videos</li><li>Gaming and anime edits</li><li>Promotional and business videos</li><li>Content ideas, planning, scripts and complete content creation</li></ul>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon">✧</div>
+      <h3>4. Logo & Brand Design</h3>
+      <p>Visual identity concepts for creators, channels, small businesses and personal brands.</p>
+      <ul><li>AI-assisted logo design</li><li>Custom logo design</li><li>YouTube channel and creator logos</li><li>Business and personal brand concepts</li></ul>
+    </article>
   </div>
+  <p class="muted" style="font-size:.86rem;margin-top:20px">Not sure which category to choose? Select “Multiple Services / Custom Project” in the enquiry form and describe what you need.</p>
 </section>
 
 <section class="section container" id="about">
@@ -316,21 +337,23 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
         <span><small>WhatsApp</small><strong>Message on WhatsApp ↗</strong></span>
       </a>
     </aside>
+
     <div class="contact-card reveal">
       <h3>Send a project enquiry</h3>
       <form id="contactForm">
         <div class="form-grid">
           <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required></div>
           <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
-          <div class="field full"><label for="service">What service do you need?</label><select id="service" name="service" required>
-            <option value="" selected disabled>Select a service</option>
-            <option>Portfolio Website Creation</option><option>Professional / Business Website</option><option>Course Website Development</option>
-            <option>Website Development Training — Recorded Course</option><option>Website Development Training — Live Teaching</option>
-            <option>YouTube Video Editing</option><option>YouTube Shorts Editing</option><option>Instagram Reels Editing</option>
-            <option>Gaming / Anime Video Editing</option><option>Promotional / Business Video Editing</option><option>Other Social Media Video Editing</option>
-            <option>Content Ideas, Planning & Scripts</option><option>Complete Content Creation & Editing</option>
-            <option>AI-Assisted Logo Design</option><option>Custom Logo Design</option><option>Other / Multiple Services</option>
-          </select></div>
+          <div class="field full"><label for="service">What service do you need?</label>
+            <select id="service" name="service" required>
+              <option value="" selected disabled>Select a service category</option>
+              <option>Website Development — Portfolio, Business & Course Websites</option>
+              <option>Website Training — Recorded Courses & Live Teaching</option>
+              <option>Video Editing & Content Creation — YouTube, Shorts, Reels, Gaming, Anime, Promotional & Social Media Videos</option>
+              <option>Logo & Brand Design — AI-Assisted & Custom Logos</option>
+              <option>Multiple Services / Custom Project</option>
+            </select>
+          </div>
           <div class="field full"><label for="message">Project details</label><textarea id="message" name="message" placeholder="Tell me about your idea, requirements and preferred timeline..." required></textarea></div>
           <div class="field full"><button class="btn primary" type="submit">Prepare Email Enquiry ↗</button></div>
         </div>
@@ -341,10 +364,8 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
 </section>
 </main>
 
-<!-- Floating WhatsApp button: visible throughout the website -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/918608508895?text=Hi%2C%20I%20visited%20your%20MAX%20PORTFOLIO%20website%20and%20would%20like%20to%20discuss%20a%20project."
-     target="_blank" rel="noopener noreferrer" aria-label="Contact MAX PORTFOLIO on WhatsApp">
+  <a href="https://wa.me/918608508895?text=Hi%2C%20I%20visited%20your%20MAX%20PORTFOLIO%20website%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Contact MAX PORTFOLIO on WhatsApp">
     <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
       <path d="M16 .8A15.1 15.1 0 0 0 3.1 23.7L1 31l7.5-2A15.1 15.1 0 1 0 16 .8Zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.4 1.2 1.2-4.3-.3-.5A12.3 12.3 0 1 1 16 28.3Zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 3.9c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5Z"/>
     </svg>
@@ -358,6 +379,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 
 const body=document.body;
 const themeToggle=document.getElementById('themeToggle');
 const savedTheme=localStorage.getItem('max-portfolio-theme');
+
 if(savedTheme==='light')body.setAttribute('data-theme','light');
 
 function updateThemeButton(){
