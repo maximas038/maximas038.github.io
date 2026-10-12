@@ -183,6 +183,61 @@
       .visual-card{padding:17px}.service-choice{padding:12px}.service-detail{padding:18px}.facts{grid-template-columns:1fr}
       .whatsapp-float{right:12px;bottom:14px;width:54px;height:54px}
     }
+  
+    /* Final polish: balanced mobile gutters, stronger typography, and clear hero-card labels */
+    h1,h2,h3,.section-heading h2,.service-choice-text strong,.project-card h3,
+    .creator-card h3,.contact-copy strong {
+      font-family: "Trebuchet MS", "Segoe UI", Inter, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+    }
+    .section-heading>p,.section-intro,.service-detail p,.project-card p,
+    .about-copy p,.contact-copy p {
+      font-weight: 500;
+      line-height: 1.75;
+    }
+    .chip-top {
+      right: 12px;
+      top: 0;
+      z-index: 2;
+      white-space: normal;
+      text-align: center;
+    }
+    .visual-top { position: relative; padding-top: 32px; }
+    .visual-label {
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 68%;
+      text-align: right;
+      line-height: 1.35;
+    }
+    @media(max-width:760px) {
+      .container { width: calc(100% - 36px) !important; margin-left:auto; margin-right:auto; }
+      .hero > .container.hero-grid {
+        width: calc(100% - 36px) !important;
+        max-width: 560px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .hero-copy { padding-inline: 0; }
+      .hero h1 { font-size: clamp(2.15rem, 8.6vw, 3rem); line-height:1.1; }
+      .hero-copy>p { font-size: .98rem; line-height:1.72; }
+      .hero-actions .btn { min-height:54px; border-radius:14px; }
+      .hero-meta { justify-content:flex-start; }
+      .hero-visual { padding: 34px 0 4px; }
+      .chip-top { top:0; right:8px; max-width:calc(100% - 16px); }
+      .visual-top { padding-top:28px; }
+      .visual-label { max-width:65%; font-size:.78rem; }
+      .section { padding:58px 0; }
+      .section-heading h2 { line-height:1.18; }
+      .service-choice-text strong,.project-card h3 { font-size:1.02rem; }
+    }
+    @media(max-width:380px) {
+      .container,.hero > .container.hero-grid { width:calc(100% - 28px) !important; }
+      .hero h1 { font-size:clamp(2rem, 8.5vw, 2.45rem); }
+    }
+
   </style>
 </head>
 <body>
@@ -276,7 +331,7 @@
         <div class="contact-grid">
           <div class="panel contact-panel"><h3>Contact details</h3><p>Reach out about websites, training, video editing, content creation or logo design.</p>
             <div class="contact-item"><div class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></div><div class="contact-copy"><span>Email</span><a href="mailto:maximas038@gmail.com">maximas038@gmail.com</a></div></div>
-            <div class="contact-item"><div class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c.4 2 1.7 3.3 3.7 4"></path><path d="M9 8.5 8 9.5c.5 1.5 2 3 3.5 3.5l1-1"></path></svg></div><div class="contact-copy"><span>WhatsApp</span><a href="https://wa.me/918608508895" target="_blank" rel="noopener noreferrer">Message me on WhatsApp ↗</a></div></div>
+            <div class="contact-item"><div class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c.4 2 1.7 3.3 3.7 4"></path><path d="M9 8.5 8 9.5c.5 1.5 2 3 3.5 3.5l1-1"></path></svg></div><div class="contact-copy"><span>WhatsApp</span><a href="https://wa.me/918608508895?text=Hi%20MAX%20PORTFOLIO!%20%F0%9F%91%8B%20I%20came%20from%20your%20portfolio%20website.%20I%E2%80%99d%20like%20to%20enquire%20about%20your%20services.%20My%20name%3A%20____" target="_blank" rel="noopener noreferrer">Message me on WhatsApp ↗</a></div></div>
           </div>
           <div class="panel contact-panel"><h3>Send a project enquiry</h3><p>Fill in the details below to prepare your enquiry email.</p>
             <form id="contactForm">
@@ -292,7 +347,7 @@
     </section>
   </main>
   <footer><div class="container footer-inner"><a class="brand" href="#home">MAX <span>PORTFOLIO.</span></a><p>© <span id="year"></span> MAX PORTFOLIO. All rights reserved.</p><a class="text-link" href="#home">Back to top ↑</a></div></footer>
-  <a class="whatsapp-float" href="https://wa.me/918608508895" target="_blank" rel="noopener noreferrer" aria-label="Contact MAX PORTFOLIO on WhatsApp" title="Chat on WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/918608508895?text=Hi%20MAX%20PORTFOLIO!%20%F0%9F%91%8B%20I%20came%20from%20your%20portfolio%20website.%20I%E2%80%99d%20like%20to%20enquire%20about%20your%20services.%20My%20name%3A%20____" target="_blank" rel="noopener noreferrer" aria-label="Contact MAX PORTFOLIO on WhatsApp" title="Chat on WhatsApp">
     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3.2A12.2 12.2 0 0 0 5.5 21.6L3.8 28l6.6-1.7A12.2 12.2 0 1 0 16 3.2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.3 9.7c-.4-.9-.8-.9-1.2-.9h-1c-.4 0-.9.2-1.2.6-.4.4-1.6 1.5-1.6 3.7s1.6 4.3 1.8 4.6c.2.3 3.1 5 7.6 6.8 3.7 1.5 4.5 1.2 5.3 1.1.8-.1 2.7-1.1 3.1-2.2.4-1.1.4-2 .3-2.2-.1-.2-.4-.3-.9-.6l-3.1-1.5c-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.5 1.8-.3.3-.5.3-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1 .2-.2.5-.6.7-.8.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8l-1.4-3.4Z" fill="currentColor" transform="translate(3 1) scale(.8)"/></svg><span class="whatsapp-label">Chat on WhatsApp</span>
   </a>
   <script>
